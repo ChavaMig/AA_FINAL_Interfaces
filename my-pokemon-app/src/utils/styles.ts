@@ -25,7 +25,7 @@ export const TypeColors: { [key: string]: string } = {
 // Función para aplicar estilos al span del tipo
 export const TypeStyles = (type: string): React.CSSProperties => {
     const color = TypeColors[type.toLowerCase()] || '#68A090'; // Color por defecto si no se encuentra
-    
+
     return {
         padding: '0.3rem 0.8rem',
         borderRadius: '12px',

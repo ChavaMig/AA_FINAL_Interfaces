@@ -1,27 +1,29 @@
 /* src/index.css */
 
 :root {
-  --background: #0f1217;
-  --panel-bg: #171b22;
-  --card-bg: #1f2530;
-  --card-text: #e3e7ef;
+    --background: #0f1217;
+    --panel-bg: #171b22;
+    --card-bg: #1f2530;
+    --card-text: #e3e7ef;
 }
 
 :root[data-theme='light'] {
-  --background: #f5f7fb;
-  --panel-bg: #ffffff;
-  --card-bg: #ffffff;
-  --card-text: #1a1d22;
+    --background: #f5f7fb;
+    --panel-bg: #ffffff;
+    --card-bg: #ffffff;
+    --card-text: #1a1d22;
 }
 
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
 
 html, body, #root {
-  height: 100%;
-  margin: 0;
+    height: 100%;
+    margin: 0;
 }
 
 body {
-  background-color: var(--background);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, 'Helvetica Neue', Arial;
+    background-color: var(--background);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, 'Helvetica Neue', Arial;
 }
