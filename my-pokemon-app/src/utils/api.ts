@@ -20,9 +20,9 @@ export type Pokemon = {
 
 const BASE_URL = 'https://pokeapi.co/api/v2';
 
-// =======================
+
 // TIPOS MÍNIMOS
-// =======================
+
 type PokemonListResponse = {
     results: {
         name: string;
@@ -36,18 +36,18 @@ type PokemonTypesResponse = {
     }[];
 };
 
-// =======================
+
 // FETCH SEGURO
-// =======================
+
 async function safeFetch<T>(url: string): Promise<T> {
     const res = await fetch(url);
     if (!res.ok) throw new Error(`Error ${res.status} al buscar ${url}`);
     return res.json();
 }
 
-// =======================
-// FUNCIÓN ADAPTADORA
-// =======================
+
+// FUNCIÓN
+
 const formatPokemon = (data: unknown): Pokemon => {
     const pokemon = data as {
         id: number;
@@ -82,9 +82,9 @@ const formatPokemon = (data: unknown): Pokemon => {
     };
 };
 
-// =======================
+
 // LISTADO
-// =======================
+
 export async function getPokemons(limit = 150): Promise<Pokemon[]> {
     const data = await safeFetch<PokemonListResponse>(
         `${BASE_URL}/pokemon?limit=${limit}`
@@ -100,9 +100,9 @@ export async function getPokemons(limit = 150): Promise<Pokemon[]> {
     return results;
 }
 
-// =======================
+
 // DETALLE
-// =======================
+
 export async function getPokemonById(id: string | number): Promise<Pokemon> {
     const data = await safeFetch<unknown>(
         `${BASE_URL}/pokemon/${String(id).toLowerCase()}`
@@ -110,9 +110,9 @@ export async function getPokemonById(id: string | number): Promise<Pokemon> {
     return formatPokemon(data);
 }
 
-// =======================
+
 // TIPOS
-// =======================
+
 export async function getTypes(): Promise<string[]> {
     const data = await safeFetch<PokemonTypesResponse>(`${BASE_URL}/type`);
     return data.results
@@ -120,9 +120,9 @@ export async function getTypes(): Promise<string[]> {
         .filter((name) => name !== 'unknown' && name !== 'shadow');
 }
 
-// =======================
+
 // SERVICIO EXTERNO SIMULADO
-// =======================
+
 export const getTranslatedDescription = (
     pokemonName: string
 ): Promise<{ original: string; translated: string }> => {

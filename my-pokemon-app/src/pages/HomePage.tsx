@@ -10,7 +10,8 @@ import SearchBar from '../components/SearchBar';
 import SortButtons from '../components/SortButtons';
 import TypeFilter from '../components/TypeFilter';
 
-// Tipado de la carga útil de favoritos guardada en localStorage
+// carga útil de favoritos guardada en localStorage
+
 interface FavoritesPayload {
     name: string; // Nombre del equipo
     pokemons: string[]; // Array de nombres de Pokémon favoritos
@@ -56,7 +57,7 @@ const HomePage = () => {
             .finally(() => setLoadingTypes(false));
     }, []);
 
-    // --- 2. Carga de favoritos de localStorage
+    // Carga de favoritos de localStorage
 
     useEffect(() => {
         try {
@@ -67,7 +68,7 @@ const HomePage = () => {
                 // OBTENER Y GUARDAR EL NOMBRE DEL EQUIPO
                 setTeamName(parsed.name);
 
-                // Convertimos a minúsculas para coincidir con la lista de pokémon
+                // Convertir a minúsculas para coincidir con la lista de pokémon
                 setFavoritePokemonNames(parsed.pokemons.map(name => name.toLowerCase()));
             } else {
                 setTeamName(null);
@@ -80,7 +81,7 @@ const HomePage = () => {
     }, []);
 
 
-    // --- 3. Lógica de Filtrado y Ordenación
+    //  Lógica de Filtrado y Ordenación
 
     const filtered = useMemo(() => {
         let list = allPokemons;
@@ -111,6 +112,7 @@ const HomePage = () => {
     }, [allPokemons, search, type, order, showFavoritesOnly, favoritePokemonNames]);
 
     //  Resetea la página a 1 cuando cambian los filtros
+
     useEffect(() => {
         setPage(1);
     }, [search, type, order, showFavoritesOnly]);
@@ -248,9 +250,9 @@ const HomePage = () => {
                 )}
             </section>
 
-            {/* SECCIÓN DE RETROALIMENTACIÓN DE RESULTADOS (Contador de Pokémon) */}
+            {/* SECCIÓN DE RETROALIMENTACIÓN DE RESULTADOS  */}
             <section
-                //aria-live="polite"
+
                 style={{
                     width: '100%',
                     maxWidth: '1100px',
@@ -264,7 +266,7 @@ const HomePage = () => {
 
                 {loadingList || errorList ? null : (
                     filtered.length > 0 ? (
-                        // Muestra el número de resultados (Contador)
+                        // Muestra el número de resultados
                         <p style={{color: '#ffd000ff', fontWeight: 'bold'}}>
                             {showFavoritesOnly ? `Mostrando **${filtered.length}** Pokémon Favoritos.` :
                                 `Mostrando **${filtered.length}** Pokémon ${(search.trim() || type) ? ` que coinciden con los filtros.` : ` de la Pokédex.`}`

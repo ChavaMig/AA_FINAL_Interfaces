@@ -124,13 +124,14 @@ const CreationPage = () => {
                 }}
             >
                 {/* 1. Título principal */}
+
                 <h2 style={{color: guaranteedTextColor, textAlign: 'center', marginBottom: '2rem'}}>
                     ⭐ Selecciona tu Equipo Pokémon Favorito ⭐
                 </h2>
 
                 <form onSubmit={handleSubmit(onSubmit)} style={{display: 'grid', gap: '1.5rem'}}>
 
-                    {/* Nombre de la Lista (Opcional) */}
+                    {/* Nombre de la Lista  */}
                     <div style={{display: 'flex', flexDirection: 'column'}}>
                         {/* 2. Etiqueta del nombre */}
                         <label style={{color: guaranteedTextColor, marginBottom: '0.5rem'}}>Nombre del Equipo
@@ -156,7 +157,7 @@ const CreationPage = () => {
                             <p style={{color: 'red', marginTop: '0.5rem'}}>{errors.listName.message}</p>}
                     </div>
 
-                    {/* Selector de Favoritos (Checkboxes) - Con la lista de la API */}
+                    {/* Selector de Favoritos  */}
                     <div
                         style={{
                             display: 'flex',
@@ -167,7 +168,7 @@ const CreationPage = () => {
                             borderRadius: '8px',
                             maxHeight: '400px',
                             overflowY: 'auto',
-                            // El color del texto del div ya lo forzamos con la label de abajo
+                            // El color del texto del div label de abajo
                         }}
                     >
                         {/* 4. Título del listado de Pokémon */}
@@ -197,7 +198,7 @@ const CreationPage = () => {
                                         })}
                                         style={{marginRight: '0.5rem'}}
                                     />
-                                    {/* 5. Span del nombre del Pokémon (Color garantizado) */}
+                                    {/* 5. Span del nombre del Pokémon  */}
                                     <span style={{
                                         marginLeft: '0.2rem',
                                         textTransform: 'capitalize',

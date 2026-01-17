@@ -5,7 +5,7 @@ import ThemeToggle from '../components/ThemeToggle';
 import Loader from '../components/Loader';
 import ErrorMessage from '../components/ErrorMessage';
 
-//  Importaciones de api.ts y styles.ts
+
 import {getPokemonById, type Pokemon, getTranslatedDescription} from '../utils/api';
 import {TypeColors, TypeStyles} from '../utils/styles';
 
@@ -13,17 +13,17 @@ const PokemonDetailPage = () => {
     const {id} = useParams<{ id: string }>();
     const navigate = useNavigate();
 
-    // 1. ESTADOS PRINCIPALES (Punto 4: Detalle y persistencia)
+    //  ESTADOS PRINCIPALES
     const [pokemon, setPokemon] = useState<Pokemon | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    // 2. ESTADOS DE TRADUCCIÓN (Punto Extra 5: Servicio Externo)
+    // ESTADOS DE TRADUCCIÓN
     const [translation, setTranslation] = useState<{ original: string, translated: string } | null>(null);
     const [loadingTranslation, setLoadingTranslation] = useState(false);
     const [translationError, setTranslationError] = useState<string | null>(null);
 
-    // 3. EFECTO PRINCIPAL DE CARGA
+    //  EFECTO PRINCIPAL DE CARGA
     useEffect(() => {
         if (id) {
             // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -121,7 +121,7 @@ const PokemonDetailPage = () => {
                         ))}
                     </div>
 
-                    //detalles
+                    {/* Detalles */}
 
                     <div style={{width: '100%', textAlign: 'center', marginBottom: '2rem'}}>
                         <h2 style={{

@@ -1,6 +1,6 @@
 // src/utils/styles.ts
 
-// Mapeo de colores para cada tipo de Pokémon (HEX o nombres de colores)
+// Mapeo de colores para cada tipo de Pokémon
 export const TypeColors: { [key: string]: string } = {
     normal: '#A8A878',
     fire: '#F08030',
