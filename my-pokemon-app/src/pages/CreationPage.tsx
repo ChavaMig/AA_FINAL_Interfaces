@@ -119,7 +119,7 @@ const CreationPage = () => {
                     backgroundColor: 'var(--card-background)',
                     borderRadius: '12px',
                     boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
-                    // Si el texto principal funciona, lo dejamos, sino usamos guaranteedTextColor
+                    // Si el texto principal funciona, lo deja, sino usa guaranteedTextColor
                     color: 'var(--text-main)'
                 }}
             >

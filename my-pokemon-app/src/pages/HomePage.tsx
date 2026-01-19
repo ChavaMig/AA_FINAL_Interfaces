@@ -273,7 +273,7 @@ const HomePage = () => {
                             }
                         </p>
                     ) : (
-                        // Mensaje de lista vacía (Empty State)
+                        // Mensaje de lista vacía
                         <p style={{color: '#ff0000ff', fontWeight: 'bold'}}>
                             {showFavoritesOnly ? `No hay Pokémon que coincidan con los filtros en tu lista de favoritos.` :
                                 `No se encontró ningun Pokémon que coincida con la busqueda!`
@@ -283,7 +283,7 @@ const HomePage = () => {
                 )}
             </section>
 
-            {/* SECCIÓN: Nombre del Equipo Favorito (Ubicación final correcta) */}
+            {/* SECCIÓN: Nombre del Equipo Favorito  */}
             {teamName && showFavoritesOnly && (
                 <section
                     style={{

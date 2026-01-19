@@ -54,7 +54,7 @@ const PokemonDetailPage = () => {
 
     // Cálculo de estilos
     const primaryType = pokemon?.types[0] || 'normal';
-    //  Usa TypeColors
+    // Usa TypeColors
     const color = TypeColors[primaryType as keyof typeof TypeColors] || '#f0f0f0';
 
 
