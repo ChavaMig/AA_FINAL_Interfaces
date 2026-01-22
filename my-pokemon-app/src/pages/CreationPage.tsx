@@ -87,9 +87,9 @@ const CreationPage = () => {
 
             localStorage.setItem('my-favorites', JSON.stringify(favoritesPayload));
 
-            alert(`✅ ¡Equipo "${teamName}" (${data.favorites.length} Pokémon) guardado!`);
+            alert(` ¡Equipo "${teamName}" (${data.favorites.length} Pokémon) guardado!`);
 
-            navigate('/');
+            navigate('/home');
             reset();
 
         } catch (error) {
@@ -143,7 +143,7 @@ const CreationPage = () => {
                                     message: 'El nombre no puede exceder 50 caracteres.'
                                 }
                             })}
-                            placeholder="Ej: Equipo de Kanto"
+                            placeholder="Ej: Equipo de Miguel"
                             style={{
                                 padding: '0.75rem',
                                 borderRadius: '8px',

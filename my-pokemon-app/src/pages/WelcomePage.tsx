@@ -114,7 +114,7 @@ const WelcomePage = () => {
                 </div>
             </section>
 
-            {/* Call to Action */}
+            {/* a la pokedex */}
             <section style={{marginTop: '4rem', textAlign: 'center'}}>
                 <Link
                     to="/home"

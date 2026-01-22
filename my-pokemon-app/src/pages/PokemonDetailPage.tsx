@@ -195,7 +195,7 @@ const PokemonDetailPage = () => {
 
 
                     <button
-                        onClick={() => navigate('/')}
+                        onClick={() => navigate('/home')}
                         style={{
                             marginTop: '3rem',
                             padding: '0.75rem 1.5rem',

@@ -81,7 +81,7 @@ const HomePage = () => {
     }, []);
 
 
-    //  Lógica de Filtrado y Ordenación
+    //  Lógica de Filtrado y Ordenación con useMemo( no repetir operaciones o cargas innecesarias)
 
     const filtered = useMemo(() => {
         let list = allPokemons;
